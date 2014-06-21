@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.gkart.service">
+	<author>Valiyullah</author>
+	<namespace>GKart</namespace>
+
+	<entity name="GKartCategory" data-source="GkartDataSource" local-service="true"  remote-service="false" session-factory="GkartSessionFactory" tx-manager="GkartTransactionManager">
+		<!-- PK fields -->
+		<column name="catId" type="long" primary="true" />
+		<column name="catName" type="String" />
+		<column name="subcatdId" type="int" />
+		<column name="subcatName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="asc">
+			<order-column name="catName" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="CatName" return-type="Collection">
+			<finder-column name="catName" />
+		</finder>
+	</entity>
+	<entity name="GKartItems" data-source="GkartDataSource" local-service="true"  remote-service="false" session-factory="GkartSessionFactory" tx-manager="GkartTransactionManager">
+		<!-- PK fields -->
+		<column name="itemId" type="long" primary="true" />
+		<column name="catName" type="String" />
+		<column name="catId" type="int" />
+		
+		<column name="itemName" type="String" />
+		<column name="itemDesc" type="String" />
+		<column name="brandName" type="String" />
+		<column name="price" type="long" />
+		<column name="quantity" type="int" />
+		<column name="units" type="String" />
+		<column name="image" type="String" />
+		<column name="brandDesc" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<order by="asc">
+			<order-column name="itemName" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="CatId" return-type="Collection">
+			<finder-column name="catId" />
+		</finder>
+		<finder name="BrandName" return-type="Collection">
+			<finder-column name="brandName" />
+		</finder>
+		<finder name="ItemName" return-type="Collection">
+			<finder-column name="itemName" />
+		</finder>
+	</entity>
+</service-builder>
