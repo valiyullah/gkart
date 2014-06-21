@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.liferay.sample.model.impl.GKartCategoryModelImpl">
+		<attributes>
+			<id name="catId" />
+			<basic name="catName" />
+			<basic name="subcatdId" />
+			<basic name="subcatName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.liferay.sample.model.impl.GKartItemsModelImpl">
+		<attributes>
+			<id name="itemId" />
+			<basic name="catName" />
+			<basic name="catId" />
+			<basic name="itemName" />
+			<basic name="itemDesc" />
+			<basic name="brandName" />
+			<basic name="price" />
+			<basic name="quantity" />
+			<basic name="units" />
+			<basic name="image" />
+			<basic name="brandDesc" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.liferay.sample.model.impl.GKartCategoryImpl" name="GKartCategory">
+		<table name="GKart_GKartCategory" />
+		<attributes />
+	</entity>
+	<entity class="com.liferay.sample.model.impl.GKartItemsImpl" name="GKartItems">
+		<table name="GKart_GKartItems" />
+		<attributes />
+	</entity>
+</entity-mappings>

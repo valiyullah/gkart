@@ -1,0 +1,1 @@
+create index IX_E7091D6E on GKart_GKartCategory (catName);

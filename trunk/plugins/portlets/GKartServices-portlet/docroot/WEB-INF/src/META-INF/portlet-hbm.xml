@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.liferay.sample.model.GKartCategory" />
+	<import class="com.liferay.sample.model.GKartItems" />
+	<class name="com.liferay.sample.model.impl.GKartCategoryImpl" table="GKart_GKartCategory">
+		<cache usage="read-write" />
+		<id name="catId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="catName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="subcatdId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="subcatName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.liferay.sample.model.impl.GKartItemsImpl" table="GKart_GKartItems">
+		<cache usage="read-write" />
+		<id name="itemId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="catName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="catId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="itemName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="itemDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="brandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="quantity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="units" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="image" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="brandDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

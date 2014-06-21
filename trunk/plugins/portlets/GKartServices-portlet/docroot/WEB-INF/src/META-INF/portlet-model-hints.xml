@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.sample.model.GKartCategory">
+		<field name="catId" type="long" />
+		<field name="catName" type="String" />
+		<field name="subcatdId" type="int" />
+		<field name="subcatName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.liferay.sample.model.GKartItems">
+		<field name="itemId" type="long" />
+		<field name="catName" type="String" />
+		<field name="catId" type="int" />
+		<field name="itemName" type="String" />
+		<field name="itemDesc" type="String" />
+		<field name="brandName" type="String" />
+		<field name="price" type="long" />
+		<field name="quantity" type="int" />
+		<field name="units" type="String" />
+		<field name="image" type="String" />
+		<field name="brandDesc" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>
